@@ -103,12 +103,16 @@ body{
 
 
 .building-rect{
-     background-color: aqua;
+    /* position: absolute; */
+     /* background-color: aqua; */
      height: 350px;
-     width: 180px;
-     position: absolute;
+     width: 550px;
+     margin: auto;
+     margin-top: 25vh;
+     padding: 0;
+     /* position: absolute;
      top: 40%;
-     left: 40%;
+     left: 40%; */
 }
 
 
@@ -160,4 +164,20 @@ body{
     font-size: 2.4vh;
     padding: 1vh;
     cursor: pointer;
+}
+
+
+
+
+.img-building{
+    position: absolute;
+    width: 400px;
+}
+
+.window-1{
+    display: none;
+}
+
+.window-2{
+    display: none;
 }

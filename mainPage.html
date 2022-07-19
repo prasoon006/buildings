@@ -38,10 +38,16 @@
       document.getElementsByClassName(parClassName)[0].innerHTML = property;
       document.getElementsByClassName(classToHide)[0].style.display = 'none';
       if (property === 'Material-1') {
+        document.getElementsByClassName('window-2')[0].style.display = 'block';
+        document.getElementsByClassName('window-1')[0].style.display = 'none';
+
+
         document.getElementsByClassName('roof-flat-block')[0].style.backgroundColor = "gray"
         document.getElementsByClassName('roof-pitched-block')[0].style.borderColor = "transparent transparent gray transparent";
       }
       else {
+        document.getElementsByClassName('window-1')[0].style.display = 'block';
+        document.getElementsByClassName('window-2')[0].style.display = 'none';
         document.getElementsByClassName('roof-flat-block')[0].style.backgroundColor = "black"
         document.getElementsByClassName('roof-pitched-block')[0].style.borderColor = "transparent transparent black transparent";
       }
@@ -178,9 +184,12 @@
 
     <div>
 
-      <div class="roof-flat-block"></div>
-      <div class="roof-pitched-block"></div>
+      <!-- <div class="roof-flat-block"></div>
+      <div class="roof-pitched-block"></div> -->
       <div class="building-rect">
+        <img class="img-building" width="100%" src="/images/onlybackground.png" > </img>
+        <img  class="img-building window-1" width="100%" src="/images/allwindows.png" > </img>
+        <img  class="img-building window-2" width="100%" src="/images/biggerwindowsoption.png" > </img>
 
 
       </div>
