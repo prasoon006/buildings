@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Map</title>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/kitcode.js" crossorigin="anonymous"> </script>
+  <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <meta name="dhb web map" content="insertmetadatahere" />
+  <title>
+    DataHomeBase Web Map
+  </title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css" />
+  <link rel="stylesheet" href="dhbMapApp/CSS/dhbMapApp.css">
+  <script src="https://js.arcgis.com/4.24/"></script>
+  <script src="dhbMapApp/JS/dhbMapApp.js"></script>
+
+  <script>
+
+    function setRoofProperty(property, parClassName, classToHide) {
+      console.log(property, parClassName);
+      document.getElementsByClassName(parClassName)[0].innerHTML = property;
+      document.getElementsByClassName(classToHide)[0].style.display = 'none';
+      if (property === 'Flat') {
+        document.getElementsByClassName('roof-flat-block')[0].style.display = 'block';
+        document.getElementsByClassName('roof-pitched-block')[0].style.display = 'none'
+      }
+      else {
+        document.getElementsByClassName('roof-pitched-block')[0].style.display = 'block'
+        document.getElementsByClassName('roof-flat-block')[0].style.display = 'none';
+      }
+    }
+
+
+    function setRoofMatProperty(property, parClassName, classToHide) {
+      console.log(property, parClassName);
+      document.getElementsByClassName(parClassName)[0].innerHTML = property;
+      document.getElementsByClassName(classToHide)[0].style.display = 'none';
+      if (property === 'Material-1') {
+        document.getElementsByClassName('roof-flat-block')[0].style.backgroundColor = "gray"
+        document.getElementsByClassName('roof-pitched-block')[0].style.borderColor = "transparent transparent gray transparent";
+      }
+      else {
+        document.getElementsByClassName('roof-flat-block')[0].style.backgroundColor = "black"
+        document.getElementsByClassName('roof-pitched-block')[0].style.borderColor = "transparent transparent black transparent";
+      }
+    }
+
+  </script>
+
+
+
+
+</head>
+<link rel="stylesheet" type="text/css" href="./leftStyle.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+
+
+
+
+
+<!-- Navbar Start -->
+<div class="navbar-l">
+  <span class="dhb-icon">
+    <!-- <div> -->
+    <img style="height: 5vh;" src="/condensed_map/images/dhblogo.png"></img>
+    <!-- </div> -->
+  </span>
+  <div class="menu-contain">
+    <div style="font-weight: bold;" class="menu-l">
+      Housing
+    </div>
+    <div class="menu-l">
+      Material + Construction
+    </div class="menu-l">
+    <div class="menu-l">
+      Economy + Finance
+    </div>
+    <div class="menu-l">
+      Policy
+    </div>
+    <div class="menu-l">
+      Toolkit
+    </div>
+  </div>
+</div>
+
+<!-- git push https://prasoon006@github.com/prasoon006/wheel.git master -->
+
+<div style="height:8vh">
+
+</div>
+<!-- Navbar End -->
+
+
+<div class="container-main">
+
+  <div class="left-filter-area">
+
+    <!-- Div line  -->
+    <!-- <div class="project-list-map">
+      <span>
+        PROJECT LIST
+      </span>
+      <span style="float: right;">
+        MAP
+      </span>
+    </div> -->
+
+    <div class="filter-title">
+      Multi-Family Design Options
+    </div>
+
+    <div class="filter-type">
+      Roof Type
+      <i onClick="(function(){
+        let ele = document.getElementsByClassName('roof-sub')[0].style.display = 'block';
+       
+        return false;
+    })();return false;" class="fa fa-angle-down icon-filter"></i>
+      <div class="roof-value">
+        Please select the value
+      </div>
+
+      <div class="roof-sub">
+        <div onclick="setRoofProperty('Flat', 'roof-value','roof-sub')" class="roof-sub-fil-type">
+          Flat
+        </div>
+        <div onclick="setRoofProperty('Pitched', 'roof-value','roof-sub')" class="roof-sub-fil-type">
+          Pitched
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="filter-type">
+      Roof Material
+      <i onClick="(function(){
+        let ele = document.getElementsByClassName('roof-mat-sub')[0].style.display = 'block';
+       
+        return false;
+    })();return false;" class="fa fa-angle-down icon-filter"></i>
+      <div class="roof-mat-value">
+        Please select the value
+      </div>
+
+      <div class="roof-mat-sub">
+        <div onclick="setRoofMatProperty('Material-1', 'roof-mat-value','roof-mat-sub')" class="roof-sub-mat-fil-type">
+          Material-1
+        </div>
+        <div onclick="setRoofMatProperty('Material-2', 'roof-mat-value','roof-mat-sub')" class="roof-sub-mat-fil-type">
+          Material-2
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div style="text-align: center;">
+      <button class="apply-btn">
+        APPLY
+      </button>
+    </div>
+  </div>
+  <div class="right-area">
+
+    <div>
+
+      <div class="roof-flat-block"></div>
+      <div class="roof-pitched-block"></div>
+      <div class="building-rect">
+
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</body>
