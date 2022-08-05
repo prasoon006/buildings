@@ -37,19 +37,63 @@
       console.log(property, parClassName);
       document.getElementsByClassName(parClassName)[0].innerHTML = property;
       document.getElementsByClassName(classToHide)[0].style.display = 'none';
-      if (property === 'Material-1') {
-        document.getElementsByClassName('window-2')[0].style.display = 'block';
-        document.getElementsByClassName('window-1')[0].style.display = 'none';
-
-
-        document.getElementsByClassName('roof-flat-block')[0].style.backgroundColor = "gray"
-        document.getElementsByClassName('roof-pitched-block')[0].style.borderColor = "transparent transparent gray transparent";
+      if (property === 'roof-1') {
+        document.getElementsByClassName('roof-1')[0].style.display = 'block';
+        document.getElementsByClassName('roof-2')[0].style.display = 'none';
+        document.getElementsByClassName('roof-3')[0].style.display = 'none';
+        document.getElementsByClassName('roof-4')[0].style.display = 'none';
       }
-      else {
+      else if (property === 'roof-2') {
+        document.getElementsByClassName('roof-1')[0].style.display = 'none';
+        document.getElementsByClassName('roof-2')[0].style.display = 'block';
+        document.getElementsByClassName('roof-3')[0].style.display = 'none';
+        document.getElementsByClassName('roof-4')[0].style.display = 'none';
+      }
+      else if (property == 'roof-3') {
+        document.getElementsByClassName('roof-1')[0].style.display = 'none';
+        document.getElementsByClassName('roof-2')[0].style.display = 'none';
+        document.getElementsByClassName('roof-3')[0].style.display = 'block';
+        document.getElementsByClassName('roof-4')[0].style.display = 'none';
+      }
+      else if (property == 'roof-4') {
+        document.getElementsByClassName('roof-1')[0].style.display = 'none';
+        document.getElementsByClassName('roof-2')[0].style.display = 'none';
+        document.getElementsByClassName('roof-3')[0].style.display = 'none';
+        document.getElementsByClassName('roof-4')[0].style.display = 'block';
+      }
+    }
+
+
+
+    function selectWindow(property, parClassName, classToHide) {
+      console.log(property, parClassName);
+      document.getElementsByClassName(parClassName)[0].innerHTML = property;
+      document.getElementsByClassName(classToHide)[0].style.display = 'none';
+      console.log(property)
+      if (property === 'window-1') {
         document.getElementsByClassName('window-1')[0].style.display = 'block';
         document.getElementsByClassName('window-2')[0].style.display = 'none';
-        document.getElementsByClassName('roof-flat-block')[0].style.backgroundColor = "black"
-        document.getElementsByClassName('roof-pitched-block')[0].style.borderColor = "transparent transparent black transparent";
+        document.getElementsByClassName('window-3')[0].style.display = 'none';
+        document.getElementsByClassName('window-4')[0].style.display = 'none';
+      }
+      else if (property === 'window-2') {
+        document.getElementsByClassName('window-1')[0].style.display = 'block';
+        document.getElementsByClassName('window-2')[0].style.display = 'block';
+        document.getElementsByClassName('window-3')[0].style.display = 'none';
+        document.getElementsByClassName('window-4')[0].style.display = 'none';
+
+      }
+      else if (property === 'window-3') {
+        document.getElementsByClassName('window-1')[0].style.display = 'block';
+        document.getElementsByClassName('window-2')[0].style.display = 'block';
+        document.getElementsByClassName('window-3')[0].style.display = 'block';
+        document.getElementsByClassName('window-4')[0].style.display = 'none';
+      }
+      else if (property === 'window-4') {
+        document.getElementsByClassName('window-1')[0].style.display = 'block';
+        document.getElementsByClassName('window-2')[0].style.display = 'block';
+        document.getElementsByClassName('window-3')[0].style.display = 'block';
+        document.getElementsByClassName('window-4')[0].style.display = 'block';
       }
     }
 
@@ -125,7 +169,7 @@
       Multi-Family Design Options
     </div>
 
-    <div class="filter-type">
+    <!-- <div class="filter-type">
       Roof Type
       <i onClick="(function(){
         let ele = document.getElementsByClassName('roof-sub')[0].style.display = 'block';
@@ -134,18 +178,18 @@
     })();return false;" class="fa fa-angle-down icon-filter"></i>
       <div class="roof-value">
         Please select the value
-      </div>
+      </div> -->
 
-      <div class="roof-sub">
-        <div onclick="setRoofProperty('Flat', 'roof-value','roof-sub')" class="roof-sub-fil-type">
+      <!-- <div class="roof-sub"> -->
+        <!-- <div onclick="setRoofProperty('Flat', 'roof-value','roof-sub')" class="roof-sub-fil-type">
           Flat
         </div>
         <div onclick="setRoofProperty('Pitched', 'roof-value','roof-sub')" class="roof-sub-fil-type">
           Pitched
-        </div>
-      </div>
+        </div> -->
+      <!-- </div> -->
 
-    </div>
+    <!-- </div> -->
 
 
 
@@ -162,11 +206,48 @@
       </div>
 
       <div class="roof-mat-sub">
-        <div onclick="setRoofMatProperty('Material-1', 'roof-mat-value','roof-mat-sub')" class="roof-sub-mat-fil-type">
-          Material-1
+        <div onclick="setRoofMatProperty('roof-1', 'roof-mat-value','roof-mat-sub')" class="roof-sub-mat-fil-type">
+          roof-1
         </div>
-        <div onclick="setRoofMatProperty('Material-2', 'roof-mat-value','roof-mat-sub')" class="roof-sub-mat-fil-type">
-          Material-2
+        <div onclick="setRoofMatProperty('roof-2', 'roof-mat-value','roof-mat-sub')" class="roof-sub-mat-fil-type">
+          roof-2
+        </div>
+        <div onclick="setRoofMatProperty('roof-3', 'roof-mat-value','roof-mat-sub')" class="roof-sub-mat-fil-type">
+          roof-3
+        </div>
+        <div onclick="setRoofMatProperty('roof-4', 'roof-mat-value','roof-mat-sub')" class="roof-sub-mat-fil-type">
+          roof-4
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="filter-type">
+      Select Number of windows
+      <i onClick="(function(){
+        let ele = document.getElementsByClassName('window-select')[0].style.display = 'block';
+       
+        return false;
+    })();return false;" class="fa fa-angle-down icon-filter"></i>
+      <div class="window-value">
+        Please select the value
+      </div>
+
+      <div class="window-select">
+        <div onclick="selectWindow('window-1', 'window-value','window-select')" class="window-fil-type">
+          One
+        </div>
+        <div onclick="selectWindow('window-2', 'window-value','window-select')" class="window-fil-type">
+          Two
+        </div>
+        <div onclick="selectWindow('window-3', 'window-value','window-select')" class="window-fil-type">
+          Three
+        </div>
+        <div onclick="selectWindow('window-4', 'window-value','window-select')" class="window-fil-type">
+          Four
         </div>
       </div>
 
@@ -187,9 +268,25 @@
       <!-- <div class="roof-flat-block"></div>
       <div class="roof-pitched-block"></div> -->
       <div class="building-rect">
-        <img class="img-building" width="100%" src="/buildings/images/onlybackground.png" > </img>
-        <img  class="img-building window-1" width="100%" src="/buildings/images/allwindows.png" > </img>
-        <img  class="img-building window-2" width="100%" src="/buildings/images/biggerwindowsoption.png" > </img>
+        <img class="img-building" width="100%" src="/buildings/images/onlybackground.png"> </img>
+        <img class="roof-1" width="100%" src="/buildings/images/roof-1.png"> </img>
+        <img class="roof-2" width="100%" src="/buildings/images/roof-2.png"> </img>
+        <img class="roof-3" width="100%" src="/buildings/images/roof-3.png"> </img>
+        <img class="roof-4" width="100%" src="/buildings/images/roof-4.png"> </img>
+        <img class=" window-1" width="100%" src="/buildings/images/indWindow.png"> </img>
+        <img class=" window-2" width="100%" src="/buildings/images/indWindow.png"> </img>
+        <img class=" window-3" width="100%" src="/buildings/images/indWindow.png"> </img>
+        <img class=" window-4" width="100%" src="/buildings/images/indWindow.png"> </img>
+        <!-- <img class="roof-1" width="100%" src="/images/roof-1.png"> </img>
+        <img class="roof-2" width="100%" src="/images/roof-2.png"> </img>
+        <img class="roof-3" width="100%" src="/images/roof-3.png"> </img>
+        <img class="roof-4" width="100%" src="/images/roof-4.png"> </img> -->
+        <!-- <img  class="img-building window-1" width="100%" src="/images/allwindows.png" > </img> -->
+        <!-- <img  class="img-building window-2" width="100%" src="/images/biggerwindowsoption.png" > </img> -->
+        <!-- <img  class="balcony-building" width="100%" src="/images/balconyonly.png" > </img> -->
+        <!-- <img  class="stairs-building" width="100%" src="/images/exitstaircase.png" > </img> -->
+
+
 
 
       </div>
